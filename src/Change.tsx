@@ -1,4 +1,4 @@
-import { FetchUser, Inputs, User } from "../types/types";
+import { FetchUser, User } from "../types/types";
 import { ChangeEvent, useRef, useState } from "react";
 
 export const Change = () => {
@@ -250,6 +250,9 @@ export const Change = () => {
 
         const res = await req.json();
         console.log(res);
+        if (req.status === 200) {
+          getUser();
+        }
       }
     });
   };
